@@ -26,11 +26,8 @@ class PromotionSerializers(serializers.ModelSerializer):
     class Meta:
         model = Promotion
         fields = ["id","name","languages","old_price","new_price","first_image","second_image","third_image","fourth_image","is_active","item_type"]
-    # def to_representation(self, instance):
-    #         data = super().to_representation(instance)
-    #         data["category"] = CategorySerializers(instance.category).data
-    #         return data
-
+   
+  
 
 
 class OrdersSerializers(serializers.ModelSerializer):
@@ -52,7 +49,7 @@ class OrdersSerializers(serializers.ModelSerializer):
 
 
 class ShippingAddressSerializers(serializers.ModelSerializer):
-    # order = OrdersSerializers(many=True)
+  
     class Meta:
         model = ShippingAddress
         fields = ["id","user_id","customer_name","order","phone","address","state","created","payment_status"]
