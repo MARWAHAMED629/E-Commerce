@@ -1,0 +1,43 @@
+
+<div class="mainDiv responsive-grid">
+    <mat-card *ngFor="let item of products" [@fadeIn]="{ value: bounce, params: { timing: 2, delay:  1 } }">
+      <mat-card-header>
+        <mat-card-title>{{ item.name }} </mat-card-title>
+      </mat-card-header>
+      <br />
+  
+      <div *ngIf="item.second_image !== null; else noImage">
+        <img
+          mat-card-image
+          [src]="item.first_image"
+          (click)="displayItem(item.id)"
+        />
+      </div>
+  
+      <ng-template #noImage>
+        <img mat-card-image [src]="item.first_image" />
+      </ng-template>
+  
+      <mat-card-content>
+        <br/>
+        <!-- <br />
+        <p class="withvat">{{ "priceBeforeVat" | translate }}</p>
+        <p  [ngClass]="checkLang.toLowerCase() == 'ar' ? 'invoice' : 'invoice-en'">
+          <del> {{ item.price }} {{ "currenKSA" | translate }}</del>
+        </p>
+        <hr /> -->
+  
+        <p class="withvat">{{ "priceAfterVat" | translate }}</p>
+        <p [ngClass]="checkLang.toLowerCase() == 'ar' ? 'invoice' : 'invoice-en'" class="total-price text-primary">
+          {{ parsePriceToInt(item.price, item.price_vat) }}
+          {{ "currenKSA" | translate }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="fw-bold" mat-button (click)="addItemToCart(item.id, item.item_type)">
+          <mat-icon>add_circle</mat-icon> {{ "addtocart" | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

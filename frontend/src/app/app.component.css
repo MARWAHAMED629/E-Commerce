@@ -1,0 +1,68 @@
+footer {
+    background: conic-gradient(from 315deg, #efecd7, #2196f385);
+    height: 60px;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .msg {
+    height: 350px;
+    width: 284px;
+    /* background-color: #97c1d5; */
+    background-color: #abd0e1;
+    position: fixed;
+    bottom: 86px;
+    right: 20px;
+    z-index: 1000;
+    border-radius: 13px;
+    padding: 10px;
+  }
+  .close-icon {
+    position: fixed;
+    right: 18px;
+    top: 135px;
+  }
+  .ico {
+    position: fixed;
+    bottom: 39px;
+    right: 3px;
+    z-index: 1000;
+    height: 50px;
+    width: 50px;
+    color: #0f4656;
+    font-size: 37px;
+  }
+  
+  
+  .sub {
+    width: 100%;
+    background-color: #98cdf4;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  
+  form {
+    margin-top: 17px;
+    margin-left: 5px;
+    
+  }
+  mat-form-field input{
+    font-weight: bold;
+  }
+  
+  mat-form-field textarea {
+    resize: none;
+    font-weight: bold;
+  }
+  
+  
+  mat-form-field mat-label{
+    font-weight: bold !important;
+  
+  }
+  

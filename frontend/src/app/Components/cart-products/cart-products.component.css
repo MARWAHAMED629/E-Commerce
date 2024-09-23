@@ -1,0 +1,187 @@
+mat-card {
+  background: conic-gradient(from 309deg, #deeae7d6, #1484c31f);
+}
+.parent-section {
+  margin: auto;
+}
+.main {
+  display: flex;
+  align-items: center;
+  width: 100% !important;
+}
+
+.main div {
+  flex: 1;
+}
+
+.main .first {
+  height: 75px;
+  margin-top: 5px;
+}
+.main .first img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+.main .fourth {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.main .fourth .add {
+  margin-left: 8px;
+  width: 35px;
+  height: 36px;
+}
+
+.main .fourth .remove {
+  margin-right: 8px;
+  width: 35px;
+  height: 36px;
+}
+.main .fourth h3 {
+  font-weight: bold;
+}
+.total {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.delete-item {
+  display: flex;
+  justify-content: center;
+
+  margin-left: 38px;
+  cursor: pointer;
+}
+
+.myInput {
+  width: 59px;
+  text-align: center;
+}
+
+@media screen and (min-width: 300px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .main div {
+    flex: auto !important;
+  }
+
+  .main .first {
+    height: 200px;
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+  }
+  .main .first img {
+    height: 100%;
+    width: 70%;
+    object-fit: fill;
+  }
+  .second {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .main {
+    flex-direction: row;
+  }
+  .main div {
+    flex: 1 !important;
+  }
+
+  .main .first {
+    height: 75px;
+    margin-top: 5px;
+  }
+  .main .first img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
+}
+
+.invoice {
+  direction: rtl;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.invoice-en {
+  direction: ltr;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.no-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:  #777;
+}
+
+.custom-success-toast {
+  background-color: rgb(218, 229, 0); /* Your desired background color */
+  color: white; /* Text color */
+}
+
+
+
+.invoice {
+  direction: rtl;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.invoice-en {
+  direction: ltr;
+  
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.payment{
+  width: 280px !important;
+  margin: auto;
+  text-align: center;
+}
+.payment button{
+  width: 100%;
+  background-color: #7cbdf07d;
+  color: #3a3030;
+  font-weight: 600;
+  font-family: cursive;
+  font-size: 17px;
+
+}
+.fees{
+  font-size: 21px;
+  animation: changeColor 1.7s infinite;
+  -webkit-animation: changeColor 1.7s infinite;
+}
+
+@keyframes changeColor {
+  0% {
+    color: #0074cb;
+  }
+  30% {
+    color: #6e0134;
+  }
+  60% {
+    color: #dceb05;
+  }
+  90% {
+    color: #058dbe;
+  }
+ 
+  
+}

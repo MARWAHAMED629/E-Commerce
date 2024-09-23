@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+
+<div clickOutside  (clickOutside)="closeDialog()">
+    <div  *ngIf="status" class="msg"  [@fade]="status">
+
+        <form class="form-group" [formGroup]="myForm" (ngSubmit)="submitForm()">
+            
+            <mat-form-field appearance="outline" >
+                <mat-label>{{"customerName"| translate}}</mat-label>
+                <input matInput formControlName="name">
+                <mat-icon matSuffix>account_box</mat-icon>
+              </mat-form-field>
+            
+              <mat-form-field appearance="outline">
+                <mat-label>{{"phoneNumber"|translate}}</mat-label>
+                <input matInput  formControlName="phone" type="tel">
+                <mat-icon matSuffix>settings_phone</mat-icon>
+              </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>{{"message"|translate}}</mat-label>
+                <textarea matInput formControlName="subject"></textarea>
+                <mat-icon matSuffix>message</mat-icon>
+              </mat-form-field>
+
+              <button class="sub" type="submit" mat-raised-button>{{"sendMessage"|translate}}</button>
+
+        </form>
+
+        <!-- <p style="cursor: pointer;" (click)="closeDialog()"><mat-icon class="close-icon">close</mat-icon></p> -->
+    
+    
+        <ngx-spinner [fullScreen]="true" color = "#23A9F2" type="ball-scale-multiple"><h2 style="color: white;">{{"sending_mail"|translate}}</h2></ngx-spinner>
+
+        
+       
+      </div>
+    
+    
+    
+    <p style="cursor: pointer;" (click)="openDialog()" ><mat-icon  class="ico">email</mat-icon></p>
+</div>
+<footer>&copy; {{"footer"|translate}} </footer>

@@ -1,0 +1,94 @@
+<mat-toolbar >
+  <mat-toolbar-row>
+    
+      <button (click)="opened = !opened" mat-button>
+        <mat-icon >menu</mat-icon>
+      </button>
+   
+   
+    <div class="parent">
+      <div class="image">
+        <img src="assets/logoaqeel.png"  [@flipInY]="{ value: bounce, params: { timing: 2, delay:  1 } }"/>
+      
+      
+      </div>
+
+   
+        <h3>{{"welcomeMessage" | translate}}</h3>
+      
+  
+      <div class="myshoppingCart">
+        <span>{{cartTotal}}</span>
+        <mat-icon class="shopping" [routerLink]="['/cart']">add_shopping_cart</mat-icon>
+      </div>
+    </div>
+
+    
+
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="search_input">
+   
+    <p> <input #inputSearch (keyup)="searchByProduct(inputSearch.value)" class="form-control" placeholder="{{'searchByProduct'|translate}}" type="text"/></p>
+
+   
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened" mode="push">
+    <mat-list>
+      <mat-list-item (click)="opened = !opened">
+      <button class="button-menu fw-bold" routerLink="home" routerLinkActive="active" mat-raised-button>{{"home"|translate}}
+        <mat-icon>home</mat-icon>
+      </button>
+      </mat-list-item>
+      <mat-list-item (click)="opened = !opened">
+        <button class="button-menu fw-bold" routerLink="about" routerLinkActive="active" mat-raised-button>{{"aboutUs"|translate}}</button>
+      </mat-list-item>
+
+      <mat-list-item (click)="opened = !opened">
+       <button class="button-menu fw-bold" mat-raised-button (click)="switcLanguage('ar')">عربي
+        <span style="width: 10px; height: 7px;"><img style="width: 20%; height: 100%;" src="assets/ksa.png"/></span>
+       
+      </button>
+        <!-- <img src="assets/ksa.png"/> -->
+      </mat-list-item>
+      <!-- <img src="assets/ksa.png"/> -->
+
+      <mat-list-item  (click)="opened = !opened">
+       <button class="button-menu fw-bold" mat-raised-button (click)="switcLanguage('en')">EN
+        <span style="width: 10px; height: 7px;"><img style="width: 20%; height: 100%;" src="assets/uk.png"/></span>
+       
+       </button>
+        
+      </mat-list-item>
+
+      <!-- <mat-list-item >
+        <p> <input #inputSearch (keyup)="searchByProduct(inputSearch.value)" class="form-control" placeholder="Search" type="text"/></p>
+
+      </mat-list-item> -->
+     
+      <mat-list-item  class="contatc-deatils">
+      
+          <li><a href="tel:+218918057994">+218918057994</a></li>
+          
+      </mat-list-item>
+      <mat-list-item  class="contatc-deatils">
+        <li><a href="mailto:support@marwa.com">support&#64;Marwa.com</a></li>
+     
+      </mat-list-item>
+
+    </mat-list>
+  </mat-sidenav>
+  
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  
+  </mat-sidenav-content>
+  
+  
+</mat-sidenav-container>
+
+

@@ -1,0 +1,171 @@
+<section class="container p-2 main-sec">
+  <!-- <button >Close</button> -->
+  <!-- <p (click)="closeDialog()"><mat-icon>close</mat-icon></p> -->
+  <div class="payment-type">
+    <!-- <h3>{{"Hail"|translate}}</h3> -->
+    <mat-radio-group
+      (change)="changeDetechtion($event)"
+      aria-label="Select Gender"
+      color="primary"
+    >
+      <div>
+        <mat-label
+          ><b>{{ "paymentMethod" | translate }}</b></mat-label
+        >
+      </div>
+      <mat-radio-button class="cash" [checked]="true" value="cash">{{
+        "cash" | translate
+      }}</mat-radio-button>
+
+      <!-- <mat-radio-button class="visa" value="visa">{{
+        "visa" | translate
+      }}</mat-radio-button> -->
+
+    </mat-radio-group>
+  </div>
+
+  <ng-container *ngIf="paymetn_type === 'visa'; else cash">
+    <form
+      class="form-group"
+      [formGroup]="myFormVisa"
+      (ngSubmit)="submitFormUsingVisa()"
+    >
+      <div class="full-screen">
+        <div class="custom-mat-field">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ "customerName" | translate }}</mat-label>
+            <input matInput formControlName="name" />
+            <mat-icon color="primary" matSuffix>account_box</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>{{ "phoneNumber" | translate }}</mat-label>
+            <input matInput formControlName="phone" type="tel" />
+            <mat-icon color="primary" matSuffix>settings_phone</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="full-screen">
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>{{ "region" | translate }}</mat-label>
+            <input matInput formControlName="region" type="text" />
+            <mat-icon color="primary" matSuffix>address</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>{{ "address" | translate }}</mat-label>
+            <input matInput formControlName="address" type="text" />
+            <mat-icon color="primary" matSuffix>account_balance</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="full-screen">
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>{{ "visaNum" | translate }}</mat-label>
+            <input matInput formControlName="visaNumber" type="tel" />
+            <mat-icon color="primary" matSuffix>visa</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>{{ "csv" | translate }}</mat-label>
+            <input matInput formControlName="csv" type="tel" />
+            <mat-icon color="primary" matSuffix>settings_phone</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="btn">
+        <button
+         
+          
+          class="sub mt-2 p-2"
+          type="submit"
+          mat-raised-button
+        >
+          {{ "paymentProcess" | translate }}
+        </button>
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-template #cash>
+    <form
+      class="form-group"
+      [formGroup]="myFormCash"
+      (ngSubmit)="submitFormUsingCash()"
+    >
+      <div class="full-screen">
+        <div class="custom-mat-field">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ "customerName" | translate }}</mat-label>
+            <input matInput formControlName="nameCash" type="text"/>
+            <mat-icon color="primary" matSuffix>account_box</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>{{ "phoneNumber" | translate }}</mat-label>
+            <input matInput formControlName="phoneCash" type="tel" />
+            <mat-icon color="primary" matSuffix>settings_phone</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+
+    
+
+      <div class="full-screen">
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>{{ "region" | translate }}</mat-label>
+            <input matInput formControlName="regionCash" type="text" />
+            <mat-icon color="primary" matSuffix>address</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>{{ "address" | translate }}</mat-label>
+            <input matInput formControlName="addressCash" type="text" />
+            <mat-icon color="primary" matSuffix>account_balance</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+
+        <!--  -->
+        <div class="email">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ "emailAddress" | translate }}</mat-label>
+            <input matInput formControlName="emailCash"  />
+            <mat-icon color="primary" matSuffix>settings_phone</mat-icon>
+          </mat-form-field>
+        </div>
+        <!--  -->
+        
+
+      <div class="btn">
+        <button
+         
+          style="width: 100%"
+          class="sub mt-2 p-2"
+          type="submit"
+          mat-raised-button
+        >
+          {{ "paymentProcess" | translate }}
+        </button>
+      </div>
+    </form>
+  </ng-template>
+</section>
+
+<ngx-spinner [fullScreen]="true" color = "#23A9F2" type="ball-scale-multiple"><h2 style="color: white;">{{"pymentProcess"|translate}}</h2></ngx-spinner>

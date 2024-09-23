@@ -1,0 +1,143 @@
+<!-- Strt Slide -->
+<!-- <section *ngIf="products.length" class="container">
+  <div class="slider-wrapper">
+    <div class="slider" *ngFor="let item of products; let i = index;">
+      <img [src]="item.first_image" alt="image" id="slide-{{i+1}}"/>
+    </div>
+  </div>
+</section> -->
+
+
+<!--  -->
+
+<!--  -->
+<!-- End Slide -->
+
+<!-- Start Category -->
+
+<div class="category mt-4" [@flipInX]="{ value: bounce, params: { timing: 2, delay:  1 } }">
+  <ng-container *ngFor="let cat of categories" >
+    <ul>
+     <li (click)="goToProductByCat(cat.id)"> 
+
+      <!-- image -->
+      <div class="img-cat">
+        <img [src]="cat.first_image" />
+      </div>
+      <!-- End image -->
+
+      <a style="text-align: center; display: block;">{{ cat.name }}</a>
+    </li>
+    </ul>
+    <!-- <button class="btnClick" (click)="goToProductByCat(cat.id)" mat-raised-button href="">{{ cat.name }}</button> -->
+  
+  </ng-container>
+</div>
+
+
+
+<!-- End Of Category -->
+<!-- START PROMOTION -->
+
+
+<div class="mainDiv responsive-grid">
+  <mat-card *ngFor="let item of promotions" >
+    <mat-card-header>
+      <div class="pro" >{{"promotion" | translate}}</div>
+      <mat-card-title>{{ item.name }} </mat-card-title>
+    </mat-card-header>
+    <br />
+
+    <div *ngIf="item.second_image !== null; else noImage">
+      <img [@jackInTheBox]="{ value: bounce, params: { timing: 1.2, delay:  1 } }"
+        mat-card-image
+        [src]="item.first_image"
+        (click)="displayPromotionItem(item.id)"
+      />
+    </div>
+
+    <ng-template #noImage>
+      <img mat-card-image [src]="item.first_image" />
+    </ng-template>
+
+    <mat-card-content>
+      <p class="percentage">{{getPercentage(item.old_price,item.new_price) | number:"2.1-2"}}%</p>
+      <br />
+      <p class="withvat">{{ "old_price_promotion" | translate }}</p>
+      <p [ngClass]="checkLang.toLowerCase() == 'ar' ? 'invoice' : 'invoice-en'">
+        <!-- {{ item.price | currency :'SAR ': 'code'}}  -->
+        <del> {{ item.old_price }} {{ "currenKSA" | translate }}</del>
+      </p>
+
+      <hr />
+
+      <p class="withvat">{{ "new_price_promotion" | translate }}</p>
+
+      <p [ngClass]="checkLang.toLowerCase() == 'ar' ? 'invoice' : 'invoice-en'" class="total-price text-primary">
+        {{ item.new_price}}
+        {{ "currenKSA" | translate }}
+      </p>
+
+      
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      
+      <button class="fw-bold" mat-button (click)="addItemToCart(item.id, item.item_type)">
+        <mat-icon>add_circle</mat-icon> {{ "addtocart" | translate }}
+      </button>
+
+    </mat-card-actions>
+  </mat-card>
+</div>
+<hr *ngIf="promotions.length"/>
+
+<!-- END PROMOTION -->
+<div class="mainDiv responsive-grid">
+  <mat-card *ngFor="let item of products">
+    <mat-card-header>
+      <mat-card-title>{{ item.name }} </mat-card-title>
+    </mat-card-header>
+    <br />
+
+    <div *ngIf="item.second_image !== null; else noImage">
+      <img
+        mat-card-image
+        [src]="item.first_image"
+        (click)="displayItem(item.id)"
+      />
+    </div>
+
+    <ng-template #noImage>
+      <img mat-card-image [src]="item.first_image" />
+    </ng-template>
+
+    <mat-card-content>
+      <br />
+      
+      <!-- <p class="withvat">{{ "priceBeforeVat" | translate }}</p>
+      <p [ngClass]="checkLang.toLowerCase() == 'ar' ? 'invoice' : 'invoice-en'">
+        <del > {{ item.price }} {{ "currenKSA" | translate }}</del>
+      </p>
+
+      <hr /> -->
+
+      <p class="withvat">{{ "priceAfterVat" | translate }}</p>
+
+      <p [ngClass]="checkLang.toLowerCase() == 'ar' ? 'invoice' : 'invoice-en'" class="total-price text-primary">
+        {{ parsePriceToInt(item.price, item.price_vat) }}
+        {{ "currenKSA" | translate }}
+      </p>
+
+      
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="fw-bold" mat-button (click)="addItemToCart(item.id, item.item_type)">
+        <mat-icon>add_circle</mat-icon> {{ "addtocart" | translate }}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

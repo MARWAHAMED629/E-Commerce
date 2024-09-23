@@ -1,0 +1,85 @@
+<section *ngIf="checkLang.toLowerCase() == 'ar'; else englishLanguage" class="container-fluid mt-3 aboutUsArabic">
+    <section class="contactsAR">
+        <ul>
+            <li><a href="https://wa.me/+218918057994?text=Hi%20There!">واتساب </a><mat-icon>textsms</mat-icon></li>
+            <li><a href="tel:+218918057994">اتصل بنا </a><mat-icon>call</mat-icon></li>
+            <li><a href="mailto:support@marwa.com">بريد الكتروني </a><mat-icon>email</mat-icon></li>
+        </ul>
+    </section>
+
+    <!-- <div class="image-hannen mt-1 mb-2">
+        <img src="/assets/hannen.png"/>
+    </div> -->
+
+    <h1>من نحن - : 
+</h1>
+
+<p> مرحبًا بك في وجهتك الرئيسية لتجربة تسوق عبر الإنترنت لا مثيل لها نسعى لإعادة تعريف طريقة تسوقك عبر الإنترنت. تم تصميم منصتنا لتقديم تشكيلة مختارة بعناية من المنتجات عالية الجودة في مختلف الفئات، بما في ذلك الإلكترونيات والأزياء وديكور المنزل ومستحضرات التجميل والمزيد. نحن ملتزمون بتوفير رحلة تسوق مريحة وآمنة وممتعة لعملائنا.
+</p>
+
+<h1>مهمتنا :</h1>
+<p>مهمتنا هي تمكين الأفراد والأعمال من خلال تقديم مجموعة متنوعة من المنتجات عالية الجودة في سوق إلكتروني واحد مريح. نهدف إلى جعل تجربة التسوق عبر الإنترنت سلسة وممتعة وموثوقة، مضمونين رضا العميل في كل خطوة.</p>
+
+<h1> لماذا اختيار :</h1>
+<p>تشكيلة متنوعة: استكشف مجموعة مختارة بعناية من المنتجات التي تلبي احتياجاتك وتفضيلاتك المتنوعة.
+    ضمان الجودة: نعتبر الجودة أولوية، حيث نعمل مع موردين وعلامات تجارية موثوقة لتقديم منتجات تلبي معاييرنا العالية.
+    عمليات تحويل آمنة: تسوق بثقة علمًا بأن عملياتك المالية آمنة وأن معلوماتك الشخصية محمية.
+    توصيل سريع وموثوق: استمتع بشحن سريع وموثوق لضمان استلام طلباتك في الوقت المناسب.
+    خدمة عملاء استثنائية: فريق خدمة العملاء المخصص لدينا هو هنا لمساعدتك في أي استفسارات أو مخاوف.</p>
+
+
+<h1>اتصل بنا</h1>
+<p>إذا كان لديك أي استفسار أو تحتاج إلى مساعدة، فلا تتردد في الاتصال بفريق الدعم الخاص بنا. يمكنك الوصول إلينا عبر البريد الإلكتروني support&#64;marwa.com +أو الاتصال بنا عبر الهاتف على رقم: 218918057994    
+
+    شكرًا لزيارتكم لموقعنا، نتطلع إلى خدمتكم ومساعدتكم في الحصول على أفضل تجربة لعب!</p>
+
+
+</section>
+
+
+<ng-template #englishLanguage>
+    <section class="container-fluid mt-3 aboutUsEnglish">
+
+        <section class="contactsAR">
+            <ul>
+                <li><mat-icon> textsms</mat-icon><a href="https://wa.me/+971555775330?text=Hi%20There!"> WhatsApp</a> </li>
+                <li><mat-icon>call</mat-icon><a href="tel:+971555775330"> Call Us</a></li>
+                <li><mat-icon>email</mat-icon><a href="mailto:support&#64;marwa.com"> Email</a></li>
+            </ul>
+        </section>
+
+        <!-- <div class="image-hannen mt-1 mb-2">
+            <img src="/assets/hannen.png"/>
+        </div> -->
+
+        <h1>About Us -:</h1>
+        
+        <p>Welcome to marwa.com your premier destination for an unparalleled online shopping experience!
+
+        </p>
+        <h1>Our Mission :</h1>
+       
+        <p>Our mission is to empower individuals and businesses by offering a diverse range of high-quality products in one convenient online marketplace. We aim to make the online shopping experience seamless, enjoyable, and reliable, ensuring customer satisfaction at every step.
+
+        </p>
+
+
+        <h1>Why Choose marwa.com?
+        </h1>
+        <p>Diverse Selection: Explore a carefully curated collection of products that cater to your diverse needs and preferences.</p>
+        
+        <p>Quality Assurance: We prioritize quality, working with reputable suppliers and brands to deliver products that meet our high standards.</p>
+        
+        <p>Secure Transactions: Shop with confidence knowing that your transactions are secure, and your personal information is protected.</p>
+        <p>Fast and Reliable Delivery: Experience prompt and reliable shipping to ensure you receive your orders in a timely manner.</p>
+        <p>Exceptional Customer Service: Our dedicated customer support team is here to assist you with any inquiries or concerns.</p>
+        <h1>Contact Us :
+        </h1>
+        <p>If you have any inquiries or need assistance, feel free to reach out to our support team. You can contact us via email at support&#64;marwa.com or give us a call at +971555775330
+            .
+            Be part of our growing community of satisfied customers who trust marwa.com for their online shopping needs. Discover the convenience of a modern and user-friendly platform that puts you, the customer, first.
+
+            Thank you for choosing marwa.com. We look forward to serving you and providing you with an exceptional online shopping experience.
+        </p>
+    </section>
+</ng-template>

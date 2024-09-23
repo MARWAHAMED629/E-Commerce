@@ -1,0 +1,43 @@
+{
+  "welcomeMessage": "Marwa",
+ 
+  "currenKSA":"LYD",
+  "priceBeforeVat":"Price Before Tax",
+  "priceAfterVat":"Price Includes Tax",
+  "addtocart":"Add To Cart",
+  "totalPrice":"Total Price",
+  "products-cart":"Products",
+  "invoice":"Invoice",
+  "noItem":"Shopping Cart is Empty",
+  "old_price_promotion":"Old Price",
+  "new_price_promotion":"New Price",
+  "promotion":"Promotion",
+  "payment":"Checkout",
+  "customerName":"Name",
+  "phoneNumber":"Phone Number",
+  "message":"Message",
+  "sendMessage":"Send Message",
+  "sending_mail":"Sending an Email...",
+  "paymentMethod":"Payment Method",
+  "address":"Address",
+  "region":"Region",
+  "visaNum":"Card Number",
+  "csv":"CSV",
+  "cash":"Cash",
+  "visa":"Visa",
+  "paymentProcess":"Payment Process",
+  "emailAddress":"Email Address",
+  "Hail":"",
+  "pymentProcess":"Payment is being processed",
+  "delivery":"",
+  
+  "home":"Home",
+  "aboutUs": "About Us",
+  "contactUs": "Contact Us",
+  "searchByProduct":"Search",
+  "footer":"All the rights are reserved to Marwa +218918057994 ",
+  "pageNotFound":"Page Not Found !"
+  
+  
+
+}

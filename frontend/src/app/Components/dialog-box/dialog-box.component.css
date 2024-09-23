@@ -1,0 +1,70 @@
+.main-sec{
+  background: conic-gradient(from 28deg, #2ca99d0a, #2196f32e) !important;
+}
+.btn{
+  width: 100%;
+  text-align: center !important;
+}
+button{
+  background:conic-gradient(from 341deg, #392ca90a, #2569bce0);
+  color: black !important;
+  font-weight: 600;
+  font-family: cursive;
+  font-size: 17px;
+  width: 50% !important;
+}
+.payment-type{
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+mat-form-field{
+  flex-direction: row;
+  margin: 3px;
+}
+
+.cash{
+  margin-right: 10px;
+}
+.visa{
+  margin-left: 10px;
+}
+
+.full-screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 300px) {
+ .full-screen{
+  flex-direction: column;
+ }
+ .main-sec{
+  padding: 10px !important;
+ }
+
+ button{
+  width: 100% !important;
+ }
+
+}
+
+@media screen and (min-width: 640px) {
+  .full-screen{
+    flex-direction: row;
+   }
+
+   button{
+    width: 50% !important;
+   }
+ 
+}
+
+.email{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

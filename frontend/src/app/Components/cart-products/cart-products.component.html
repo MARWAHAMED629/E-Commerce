@@ -1,0 +1,122 @@
+<section class="parent-section mt-4 container">
+
+  <div *ngIf="cartProducts.length; else checkCart">
+    <h2 class="fees" [ngClass]="checkLang.toLowerCase() == 'ar' ? 'invoice' : 'invoice-en'">{{"delivery"| translate}}</h2>
+    <mat-card>
+      <mat-card-content>
+        <section
+          class="main container mt-1"
+          *ngFor="let item of cartProducts; let i = index; trackBy: trackByFun"
+        >
+        <ng-container *ngIf="item.product.name !== ''">
+          <div class="first me-1">
+            <img src="http://127.0.0.1:8000{{ item['product'].first_image }}" />
+          </div>
+          <div class="second ms-2 text-center">
+            <h3 style="font-weight: 500; color: #3f51b5">
+              {{ item["product"].name }}
+            </h3>
+          </div>
+          <div class="third ms-2 text-center">
+            <h3 [ngClass]="checkLang.toLowerCase() == 'ar' ? 'invoice' : 'invoice-en'" style="font-weight: 500; color: #e91e63">
+              {{
+                parsePriceToInt(item["product"].price, item["product"].price_vat)
+              }} {{ "currenKSA" | translate }}
+            </h3>
+          </div>
+          <div class="fourth ms-2 text-center">
+            <input
+              #inputRef
+              class="myInput"
+              value="{{ item.qty }}"
+              (change)="getNewQty(inputRef.value, item.id, 'product')"
+              type="number"
+              min="1"
+              class="form-control"
+            />
+          </div>
+  
+          <div class="delete-item" (click)="deleteItem(item.id)">
+            <mat-icon color="warn">delete</mat-icon>
+          </div>
+        </ng-container>
+
+
+
+        <ng-container *ngIf="item.promotion.name !== ''">
+          <div class="first me-1">
+            <img src="http://127.0.0.1:8000{{ item['promotion'].first_image }}" />
+          </div>
+          <div class="second ms-2 text-center">
+            <h3 style="font-weight: 500; color: #3f51b5">
+              {{ item["promotion"].name }}
+            </h3>
+          </div>
+          <div class="third ms-2 text-center">
+            <h3 [ngClass]="checkLang.toLowerCase() == 'ar' ? 'invoice' : 'invoice-en'" style="font-weight: 500; color: #e91e63">
+              {{
+                item["promotion"].new_price
+              }} {{ "currenKSA" | translate }}
+            </h3>
+          </div>
+          <div class="fourth ms-2 text-center">
+            <input
+              #inputRef
+              class="myInput"
+              value="{{ item.qty }}"
+              (change)="getNewQty(inputRef.value, item.id, 'promotion')"
+              type="number"
+              min="1"
+              class="form-control"
+            />
+          </div>
+  
+          <div class="delete-item" (click)="deleteItem(item.id)">
+            <mat-icon color="warn">delete</mat-icon>
+          </div>
+        </ng-container>
+
+
+        
+
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
+  
+  <ng-template #checkCart>
+    <h2 class="no-item">{{"noItem" | translate}}</h2>
+  </ng-template>
+
+  
+
+  <!-- Invoice -->
+
+  <!-- END oF Invoice -->
+ 
+  <div *ngIf="cartProducts.length; else totalAmount">
+    <div [ngClass]="checkLang.toLowerCase() == 'ar' ? 'invoice' : 'invoice-en'">
+      <h2 style="color: #555;" class="mt-2">{{ "totalPrice" | translate }}</h2>
+      <h2 style="color: #555;">{{ totalCartPrice }} {{ "currenKSA" | translate }}</h2>
+      
+     
+    </div>
+  </div>
+
+  <ng-template #totalAmount>
+
+  </ng-template>
+  
+  
+  
+</section>
+
+<div *ngIf="cartProducts.length" class="payment mb-3 w-100">
+  <button mat-stroked-button (click)="openDialog()">{{"payment"|translate}}</button>
+</div>
+
+
+
+

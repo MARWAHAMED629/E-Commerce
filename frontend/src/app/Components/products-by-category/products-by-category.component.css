@@ -1,0 +1,64 @@
+mat-card-header {
+    margin: auto;
+  }
+  .total-price {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  mat-card-actions {
+    margin: auto;
+  }
+  mat-card {
+    background: conic-gradient(from 28deg, #2ca99d0a, #2196f32e);
+  }
+  mat-card-actions button {
+    background: #eff5f6 !important;
+    background:conic-gradient(from 315deg, #ffeb3b, #2196f385) !important
+  }
+  
+  /* ________________________________ */
+  .mainDiv {
+    padding: 24px;
+  }
+  
+  img {
+    width: 100%;
+    height: 200px;
+    /* object-fit: cover; */
+    object-fit: contain;
+    cursor: pointer;
+  }
+  
+  .responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 24px;
+  }
+  
+  del {
+    color: red;
+  }
+  .withvat {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+
+  /* direction */
+
+.invoice {
+  direction: rtl;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.invoice-en {
+  direction: ltr;
+ 
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}

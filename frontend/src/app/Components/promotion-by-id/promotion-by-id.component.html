@@ -1,0 +1,62 @@
+<section class="product-section container">
+    <div>
+      <div class="small-image">
+        <div [hidden]="first_image == null">
+          <img [src]="first_image" (mouseover)="changeImage(first_image)" />
+        </div>
+  
+        <div [hidden]="second_image == null">
+          <img [src]="second_image" (mouseover)="changeImage(second_image)" />
+        </div>
+  
+        <div [hidden]="third_image == null">
+          <img [src]="third_image" (mouseover)="changeImage(third_image)" />
+        </div>
+  
+        <div [hidden]="fourth_image == null">
+          <img [src]="fourth_image" (mouseover)="changeImage(fourth_image)" />
+        </div>
+      </div>
+    </div>
+  
+    <!-- <div class="newImgDisplay">
+      <img [src]="imgChange"/>
+    </div> -->
+
+    
+    <div class="display-image">
+      <div class="zoo">
+        <lib-ngx-image-zoom
+          [thumbImage]="imgChange"
+          [fullImage]="imgChange"
+          [magnification]="3.5"
+          [enableScrollZoom]="true"
+          [enableLens]="true"
+          [lensWidth]="230"
+          [lensHeight]="140"
+        ></lib-ngx-image-zoom>
+      </div>
+    </div>
+  
+    <div class="prd-description">
+      <h2 class="fs-5 fw-bold" style="color: #3f51b5d1">{{ name }}</h2>
+  
+      <p class="withvat">{{ "old_price_promotion" | translate }}</p>
+      <p [ngClass]="checkLang.toLowerCase() == 'ar' ? 'invoice' : 'invoice-en'">
+        <del > {{ old_price }} {{ "currenKSA" | translate }}</del>
+      </p>
+  
+      <p class="withvat">{{ "new_price_promotion" | translate }}</p>
+      <p [ngClass]="checkLang.toLowerCase() == 'ar' ? 'invoice' : 'invoice-en'">
+        <!-- {{ item.price | currency :'SAR ': 'code'}}  -->
+        <!-- {{ item.price + item.price * item.price_vat / 100  }}   {{"currenKSA" | translate}} -->
+        {{ new_price }} {{ "currenKSA" | translate }}
+      </p>
+  
+      <button class="mb-2" mat-raised-button (click)="addItemToCart(prdID,item_type )">
+        <mat-icon>add_circle</mat-icon> {{ "addtocart" | translate }}
+      </button>
+      <!-- <h2 style="text-align: center; text-justify: inter-word; color: #7c83a8;">{{description}}</h2> -->
+    </div>
+  </section>
+  
